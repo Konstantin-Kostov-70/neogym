@@ -279,11 +279,11 @@
               </h5>
             </div>
             <div class="img-box">
-              <img src="images/t1.jpg" alt="">
+              <img src="<?php echo get_theme_file_uri('/assets/images/t1.jpg') ?>" alt="">
             </div>
             <div class="social_box">
               <a href="">
-                <img src="images/facebook-logo.png" alt="">
+                <img src="<?php echo get_theme_file_uri('/assets/images/facebook-logo.png') ?>" alt="">
               </a>
               <a href="">
                 <img src="images/twitter.png" alt="">
