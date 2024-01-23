@@ -9,7 +9,15 @@
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
-<?php wp_footer(); ?>
+  
+<?php
+/**
+	 * Prints scripts or data before the closing body tag on the front end.
+	 *
+	 * @since 1.5.1
+	 */
+ wp_footer(); 
+ ?>
 </body>
 
 </html>
