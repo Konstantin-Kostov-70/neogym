@@ -49,7 +49,7 @@
                   <a class="nav-link" href="<?php get_site_url() ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                  <a class="nav-link" href="why.html"> Why us </a>
+                  <a class="nav-link" href="why.html"> Blog </a>
                 </li>
                 </li>
                 <li class="nav-item">
