@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <?php wp_head(); ?>
+  <?php wp_head(); ?>
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,11 +20,11 @@
   <!-- bootstrap core css -->
 
   <!-- fonts style -->
-  
+
   <!-- Custom styles for this template -->
 
   <!-- responsive style -->
- 
+
 </head>
 
 <body>
@@ -33,7 +33,7 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="<?php get_site_url() ?>">
+          <a class="navbar-brand" href="<?php echo get_site_url() ?>">
             <span>
               Neogym
             </span>
@@ -43,13 +43,13 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+            <!-- <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link" href="<?php get_site_url() ?>">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="<?php get_site_url('/') ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                  <a class="nav-link" href="why.html"> Blog </a>
+                  <a class="nav-link" href="<?php get_site_url('/our-blog') ?>"> Blog </a>
                 </li>
                 </li>
                 <li class="nav-item">
@@ -64,7 +64,14 @@
                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
                 </form>
               </div>
-            </div>
+            </div> -->
+            <?php wp_nav_menu(array(
+                    'menu_class'      => 'navbar-nav',
+                    'container_class' => 'd-flex ml-auto flex-column flex-lg-row align-items-center',
+                    'theme_location'  => 'primary_menu',
+                    'menu'            => 'primary_menu',
+
+                  )); ?>
           </div>
         </nav>
       </div>
