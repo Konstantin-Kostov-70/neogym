@@ -120,7 +120,7 @@ body {
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item.active a::after, .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item:hover a::after {
   display: block;
-  background-color: #ff2953;
+  background-color: #ff2954;
 }
 
 a,
@@ -591,3 +591,48 @@ a:focus {
 
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
+
+/* Custom css */
+
+.content-wrapper {
+  width: 70%;
+  margin: auto;
+  text-align: left;
+ 
+}
+
+.content-wrapper h2 {
+  color: #ff2953;
+  text-align: center;
+}
+
+#menu-primary-menu > li > a{
+  margin: 10px 30px;
+  padding: 0;
+  padding-bottom: 3px;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+#menu-primary-menu > li > a::after{
+  display: none;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+#menu-primary-menu > li:hover > a::after{
+  display: block;
+  background-color: #ff2954;
+}
+
+
