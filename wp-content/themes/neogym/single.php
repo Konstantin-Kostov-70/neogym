@@ -9,9 +9,9 @@
         <div class="single">
           <div class="col-md-12 mx-auto">
             <div class="detail-box">
-              <h2>
+              <h1>
                 <?php the_title(); ?>
-              </h2>
+              </h1>
               <div class="single-image">
                 <?php the_post_thumbnail('post-thumbnail'); ?>
               </div>
