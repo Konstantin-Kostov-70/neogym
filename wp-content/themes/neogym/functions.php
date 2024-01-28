@@ -39,6 +39,53 @@ add_action('after_setup_theme', 'neogym_register_menu');
 //  }
 //  add_filter('nav_menu_css_class', 'add_menu_list_item_class', 1, 3);
 
+/**
+ * This function list all posts in blog page
+ */
+
+function list_all_posts($post_per_page) {
+
+   // if ( empty($post_per_page )) {
+	// 	$post_per_page = 4;
+	// }
+
+	$post_query_args = array(
+       'post_type' => 'post',
+       'post_status' => 'publish',
+       'post_per_page' => $post_per_page,
+      
+	);
+
+   $post_query = new WP_Query( $post_query_args );
+
+   ?>
+   <?php if($post_query->have_posts()) : ?>
+      <?php while($post_query->have_posts()) : $post_query->the_post(); ?>
+      <div class="col-lg-3 col-md-6">
+            <div class="box">
+              <div id="img-box">
+              <div id="blog-img"> <?php the_post_thumbnail('post-thumbnail'); ?> </div>
+                <!-- <img src="images/u-1.png" alt=""> -->
+              </div>
+              <div class="detail-box">
+                <h5>
+                  <?php the_title(); ?>
+                </h5>
+                <p id="read-more">
+                <?php echo wp_trim_words(get_the_content(), 6) ?>
+                <a href="<?php the_permalink(); ?>" class="read-more-a">Read more</a>
+                </p>
+              </div>
+            </div>
+          </div>
+      <?php endwhile; ?>
+   <?php endif; ?>
+   <?php
+
+}
+
+
+
 
 
 
