@@ -594,7 +594,7 @@ a:focus {
 
 /* Custom css */
 
-.content-wrapper {
+.content-wrapper , .single{
   width: 70%;
   margin: auto;
   text-align: left;
