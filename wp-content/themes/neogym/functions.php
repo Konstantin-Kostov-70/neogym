@@ -1,8 +1,7 @@
 <?php
 // Here is all functions for Neogym theme
 
-add_theme_support( 'post-thumbnails', 'menus' );
-
+add_theme_support('post-thumbnails');
 /**
  * This function load all styles and scripts
  */
@@ -32,13 +31,13 @@ function neogym_register_menu() {
 add_action('after_setup_theme', 'neogym_register_menu');
 
 
-function add_menu_list_item_class($classes, $item, $args) {
-   if (property_exists($args, 'list_item_class')) {
-       $classes[] = $args->list_item_class;
-   }
-   return $classes;
- }
- add_filter('nav_menu_css_class', 'add_menu_list_item_class', 1, 3);
+// function add_menu_list_item_class($classes, $item, $args) {
+//    if (property_exists($args, 'list_item_class')) {
+//        $classes[] = $args->list_item_class;
+//    }
+//    return $classes;
+//  }
+//  add_filter('nav_menu_css_class', 'add_menu_list_item_class', 1, 3);
 
 
 
