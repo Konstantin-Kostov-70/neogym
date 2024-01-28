@@ -70,8 +70,8 @@
                     'container_class' => 'd-flex ml-auto flex-column flex-lg-row align-items-center',
                     'theme_location'  => 'primary_menu',
                     'menu'            => 'primary_menu',
-
-                  )); ?>
+                  )); 
+            ?>
           </div>
         </nav>
       </div>
