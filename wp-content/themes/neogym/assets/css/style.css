@@ -349,7 +349,7 @@ a:focus {
   text-align: center;
 }
 
-.heathy_section h2 {
+.heathy_section h1 {
   font-weight: bold;
 }
 
@@ -594,14 +594,14 @@ a:focus {
 
 /* Custom css */
 
-.content-wrapper , .single{
+.content-wrapper, .single, .detail-box {
   width: 70%;
   margin: auto;
-  text-align: left;
+  text-align: center;
  
 }
 
-.content-wrapper h2 {
+.detail-box h2 {
   color: #ff2953;
   text-align: center;
 }
@@ -635,4 +635,33 @@ a:focus {
   background-color: #ff2954;
 }
 
+.single-image {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+#read-more .read-more-a {
+  display: block;
+  color: #ff2953;
+}
+
+
+
+#blog-img .size-post-thumbnail  {
+  height: 150px;
+  width: 150px;
+}
+
+#img-box {
+  height: 200px;
+  width: 123px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+}
 
