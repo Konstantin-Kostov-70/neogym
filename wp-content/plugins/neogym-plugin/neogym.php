@@ -14,3 +14,10 @@
  * Text Domain:       softuni
  * Domain Path:       /languages
  */
+
+ if ( ! defined( 'TRAINERS_INCLUDE' ) ) {
+    define( 'TRAINERS_INCLUDE', plugin_dir_path( __FILE__ ) . 'includes'  );
+}
+
+require TRAINERS_INCLUDE . '/cpt-trainers.php';
+require TRAINERS_INCLUDE . '/function.php';
