@@ -49,7 +49,7 @@
  <footer class="container-fluid footer_section">
     <p>
       &copy; 2020 All Rights Reserved. Design by
-      <a href="">Free Html Templates</a>
+      <span>Free Html Templates</span>
     </p>
   </footer>
   <!-- footer section -->
