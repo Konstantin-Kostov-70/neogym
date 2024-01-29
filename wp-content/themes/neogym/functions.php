@@ -5,16 +5,17 @@ add_theme_support('post-thumbnails');
 /**
  * This function load all styles and scripts
  */
-function neogym_assets() {
-   wp_enqueue_style('style-css', get_theme_file_uri('/assets/css/style.css'), false, '1.0.0');
-   wp_enqueue_style('responsive-css', get_theme_file_uri('/assets/css/responsive.css'), false, '1.0.0');
-   wp_enqueue_style('bootstrap-css', get_theme_file_uri('/assets/css/bootstrap.css'), false, '1.0.0');
-   wp_enqueue_style('owl-carousel', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', false, '1.0.0');
-   wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap', false, '1.0.0');
-   
-   // This scripts is loaded in footer.php with function wp_footer() , the last argument is set to true because we wont this functionality
-   wp_enqueue_script('bootstrap-js', get_theme_file_uri('/assets/js/bootstrap.js'), array(), '1.0.0', true );
-   wp_enqueue_script('bootstrap-js', get_theme_file_uri('/assets/js/jquery-3.4.1.min.js'), array('jquery'), '1.0.0', true );
+function neogym_assets()
+{
+  wp_enqueue_style('style-css', get_theme_file_uri('/assets/css/style.css'), false, '1.0.0');
+  wp_enqueue_style('responsive-css', get_theme_file_uri('/assets/css/responsive.css'), false, '1.0.0');
+  wp_enqueue_style('bootstrap-css', get_theme_file_uri('/assets/css/bootstrap.css'), false, '1.0.0');
+  wp_enqueue_style('owl-carousel', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', false, '1.0.0');
+  wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap', false, '1.0.0');
+
+  // This scripts is loaded in footer.php with function wp_footer() , the last argument is set to true because we wont this functionality
+  wp_enqueue_script('bootstrap-js', get_theme_file_uri('/assets/js/bootstrap.js'), array(), '1.0.0', true);
+  wp_enqueue_script('bootstrap-js', get_theme_file_uri('/assets/js/jquery-3.4.1.min.js'), array('jquery'), '1.0.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'neogym_assets');
@@ -22,10 +23,11 @@ add_action('wp_enqueue_scripts', 'neogym_assets');
 /**
  * This function register menus for us
  */
-function neogym_register_menu() {
-   register_nav_menus( array( 
-      'primary_menu' => __( 'Primary Menu', 'softuni' )
-    ) );
+function neogym_register_menu()
+{
+  register_nav_menus(array(
+    'primary_menu' => __('Primary Menu', 'softuni')
+  ));
 }
 
 add_action('after_setup_theme', 'neogym_register_menu');
@@ -43,49 +45,25 @@ add_action('after_setup_theme', 'neogym_register_menu');
  * This function list all posts in blog page
  */
 
-function list_all_posts($post_per_page) {
+function list_all_posts($post_per_page)
+{
+  $post_query_args = array(
+    'post_type'      => 'post',
+    'post_status'    => 'publish',
+    'posts_per_page' => $post_per_page,
+    'paged'          => get_query_var('paged'),
 
-   // if ( empty($post_per_page )) {
-	// 	$post_per_page = 4;
-	// }
+  );
 
-	$post_query_args = array(
-       'post_type' => 'post',
-       'post_status' => 'publish',
-       'post_per_page' => $post_per_page,
-      
-	);
+  $post_query = new WP_Query($post_query_args);
 
-   $post_query = new WP_Query( $post_query_args );
-
-   ?>
-   <?php if($post_query->have_posts()) : ?>
-      <?php while($post_query->have_posts()) : $post_query->the_post(); ?>
-      <div class="col-lg-3 col-md-6">
-            <div class="box">
-              <div id="img-box">
-              <div id="blog-img"> <?php the_post_thumbnail('post-thumbnail'); ?> </div>
-                <!-- <img src="images/u-1.png" alt=""> -->
-              </div>
-              <div class="detail-box">
-                <h5>
-                  <?php the_title(); ?>
-                </h5>
-                <p id="read-more">
-                <?php echo wp_trim_words(get_the_content(), 6) ?>
-                <a href="<?php the_permalink(); ?>" class="read-more-a">Read more</a>
-                </p>
-              </div>
-            </div>
-          </div>
-      <?php endwhile; ?>
-   <?php endif; ?>
-   <?php
+?>
+  <?php if ($post_query->have_posts()) : ?>
+    <?php while ($post_query->have_posts()) : $post_query->the_post(); ?>
+       <?php get_template_part('partials/content', 'post') ?>
+    <?php endwhile; ?>
+  <?php endif; ?>
+  <?php $GLOBALS['wp_query'] = $post_query; ?>
+<?php
 
 }
-
-
-
-
-
-
