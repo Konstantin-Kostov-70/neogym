@@ -14,70 +14,13 @@
 
       <div class="us_container ">
         <div class="row">
-          <?php list_all_posts(4) ?>
-          <!-- <div class="col-lg-3 col-md-6">
-            <div class="box">
-              <div class="img-box">
-                <img src="images/u-1.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  QUALITY EQUIPMENT
-                </h5>
-                <p>
-                  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="box">
-              <div class="img-box">
-                <img src="images/u-4.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  NUTRITION
-                </h5>
-                <p>
-                  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="box">
-              <div class="img-box">
-                <img src="images/u-2.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  HEALTHY DIET PLAN
-                </h5>
-                <p>
-                  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="box">
-              <div class="img-box">
-                <img src="images/u-3.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  SPORT TRAINING
-                </h5>
-                <p>
-                  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                </p>
-              </div>
-            </div>
-          </div> -->
+          <?php list_all_posts(4); ?>
         </div>
       </div>
     </div>
+    <div class="paginator">
+            <?php echo paginate_links(); ?>
+        </div>
   </section>
 
   <!-- end us section -->
@@ -118,5 +61,5 @@
 
   <!-- end contact section -->
 
- 
+<?php wp_reset_postdata(); ?>
 <?php get_footer(); ?>
