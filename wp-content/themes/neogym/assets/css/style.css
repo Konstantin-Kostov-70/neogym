@@ -665,3 +665,18 @@ a:focus {
 
 }
 
+.author {
+  display: block;
+}
+
+.paginator {
+	color: crimson;
+	text-align: center;
+	margin-top: 15px;
+}
+
+.page-numbers {
+  font-size: larger;
+}
+
+
