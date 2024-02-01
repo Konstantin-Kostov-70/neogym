@@ -363,13 +363,14 @@ a:focus {
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
+          justify-content: space-around;
   margin-top: 45px;
+  align-items: center;
 }
 
 .heathy_section .btn-box a {
   display: inline-block;
-  padding: 8px 35px;
+  padding: 15px 35px;
   background-color: transparent;
   border: 1.5px solid #ffffff;
   color: #ffffff;
@@ -678,5 +679,63 @@ a:focus {
 .page-numbers {
   font-size: larger;
 }
+
+.detail-box > li {
+  list-style-type: none;
+}
+
+li[id="menu-item-159"],
+li[id="menu-item-161"],
+li[id="menu-item-162"] {
+  list-style-type: none;
+}
+
+li[id="menu-item-159"] > a,
+li[id="menu-item-161"] > a,
+li[id="menu-item-162"] > a {
+  color: #ff2953;
+}
+
+#menu-location-menu ,
+#menu-phone-menu,
+#menu-email-menu {
+ padding-inline-start: 0;
+ color: #ff2953;
+}
+
+#trainer-heading { 
+  color: #fbfdfd;
+}
+
+#program {
+  background-color: #ff2953; 
+}
+
+.program-heading {
+  margin-bottom: 50px;
+}
+
+.joined-wrapper {
+  border: solid 2px #ff2953;
+  padding: 8px 33px;
+} 
+
+.joined-span {
+  display: inline-block;
+  margin-left: 5px;
+  height: 36px;
+  width: 36px;
+  padding: 3px;
+  border: solid 2px #ff2953 ;
+  background-color: #ff2953;
+  border-radius: 50% ;
+}
+
+
+
+
+
+
+
 
 
