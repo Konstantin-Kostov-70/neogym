@@ -366,8 +366,7 @@ a:focus {
   .btn-box {
     display: flex;
     justify-content: center;
-    margin-top: 45px;
-
+    align-items: center;
     a {
       @include hero_btn($white, $black, 8px, 35px, 0);
       text-transform: uppercase;
