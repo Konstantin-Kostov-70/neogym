@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 <!-- heathy section -->
-<?php if (have_posts()) : ?>
-  <?php while (have_posts()) : the_post(); ?>
+<?php if ( have_posts() ) : ?>
+  <?php while ( have_posts() ) : the_post(); ?>
     <section class="heathy_section layout_padding">
       <div class="container">
 
@@ -13,7 +13,7 @@
                 <?php the_title(); ?>
               </h1>
               <div class="single-image">
-                <?php the_post_thumbnail('post-thumbnail'); ?>
+                <?php the_post_thumbnail( 'post-thumbnail' ); ?>
               </div>
               <p>
                 <?php the_content(); ?>
