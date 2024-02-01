@@ -36,6 +36,7 @@ function trainers_cpt() {
 
     $args = array(
 		'labels'             => $labels,
+		'menu_icon'          => 'dashicons-universal-access',
 		'public'             => true,
 		'publicly_queryable' => true,
 		'show_ui'            => true,
@@ -58,3 +59,72 @@ function trainers_cpt() {
     register_post_type( 'trainer', $args );
 }
 add_action( 'init', 'trainers_cpt' );
+
+/**
+ * Register our Category taxonomy for our Trainers CPT
+ *
+ * @return void
+ */
+function trainer_category_taxonomy () {
+    $labels = array(
+        'name' => 'Categories',
+        'singular_name' => 'Category',
+
+    );
+
+    $args = array(
+        'labels'       => $labels,
+        'show_in_rest' => true,
+        'hierarchical' => true,
+    );
+
+    register_taxonomy( 'trainer-category', 'trainer', $args );
+}
+add_action( 'init', 'trainer_category_taxonomy' );
+
+
+/**
+ * Register meta box(es).
+ * 
+ * @return void
+ */
+function trainer_register_meta_boxes() {
+	add_meta_box( 'besttrainer', __( 'Best Trainer', 'softuni' ), 'best_trainer_metabox_callback', 'trainer', 'side' );
+}
+add_action( 'add_meta_boxes', 'trainer_register_meta_boxes' );
+
+
+/**
+ * Callback function for my Best Trainer Metabox
+ *
+ * @return void
+ */
+function best_trainer_metabox_callback ( $post_id ) {
+	$checked = get_post_meta( $post_id->ID, 'besttrainer', true );
+	?>
+	<div>
+		<label for='besttrainer'>Best Trainer</label>
+		<input id='besttrainer' name='besttrainer' type='checkbox' value='1' <?php checked( $checked, 1, true ); ?>/>
+	</div>
+	<?php
+}
+
+/**
+ * Save my Trainer post meta
+ *
+ * @return void
+ */
+function trainer_meta_save ( $post_id ) {
+	if ( empty( $post_id ) ) {
+		return;
+	}
+
+	$bestTrainer = '';
+
+	if ( isset( $_POST['besttrainer'] ) ) {
+		$bestTrainer = esc_attr( $_POST['besttrainer'] );
+	}
+
+	update_post_meta( $post_id, 'best_trainer', $bestTrainer );
+}
+add_action( 'save_post', 'trainer_meta_save' );
