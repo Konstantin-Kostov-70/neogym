@@ -15,9 +15,18 @@
  * Domain Path:       /languages
  */
 
- if ( ! defined( 'TRAINERS_INCLUDE' ) ) {
-    define( 'TRAINERS_INCLUDE', plugin_dir_path( __FILE__ ) . 'includes'  );
+ if ( ! defined( 'NEOGYM_INCLUDE' ) ) {
+    define( 'NEOGYM_INCLUDE', plugin_dir_path( __FILE__ ) . 'includes'  );
 }
 
-require TRAINERS_INCLUDE . '/cpt-trainers.php';
-require TRAINERS_INCLUDE . '/function.php';
+require NEOGYM_INCLUDE . '/cpt-trainers.php';
+require NEOGYM_INCLUDE . '/cpt-program.php';
+require NEOGYM_INCLUDE . '/function.php';
+
+function program_joined_enqueue() {
+
+    wp_enqueue_script( 'program_joined_script', plugins_url( '/assets/js/script.js',__FILE__ ), array( 'jquery' ), 1.0 );
+
+    wp_localize_script( 'program_joined_script', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+ }
+ add_action( 'wp_enqueue_scripts', 'program_joined_enqueue' );
