@@ -14,7 +14,12 @@
 
       <div class="us_container ">
         <div class="row">
-          <?php list_all_posts(4); ?>
+          <?php if ( class_exists('CustomPostTypeLister') ) : ?>
+            <?php 
+              $post_lister = new CustomPostTypeLister('post');
+              $post_lister->list_posts(8); 
+            ?>
+          <?php endif; ?>
         </div>
       </div>
     </div>
