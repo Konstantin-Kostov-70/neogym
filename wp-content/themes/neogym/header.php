@@ -4,7 +4,7 @@
 <head>
   <?php wp_head(); ?>
   <!-- Basic -->
-  <meta charset="utf-8" />
+  <meta charset="<?php bloginfo( 'charset' ); ?>" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -14,20 +14,9 @@
   <meta name="author" content="" />
 
   <title><?php the_title(); ?></title>
-
-  <!-- slider stylesheet -->
-
-  <!-- bootstrap core css -->
-
-  <!-- fonts style -->
-
-  <!-- Custom styles for this template -->
-
-  <!-- responsive style -->
-
 </head>
 
-<body>
+<body class="<?php body_class(); ?>">
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
@@ -70,6 +59,7 @@
                     'container_class' => 'd-flex ml-auto flex-column flex-lg-row align-items-center',
                     'theme_location'  => 'primary_menu',
                     'menu'            => 'primary_menu',
+                    'list_item_class' => 'nav-item',
                   )); 
             ?>
           </div>
