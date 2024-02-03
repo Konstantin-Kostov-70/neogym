@@ -1,9 +1,18 @@
 <?php
 // Here is generic functions for Neogym theme
 
+
+/**
+ * This function enables support for post thumbnails
+ * 
+ * @return void
+ */
 add_theme_support('post-thumbnails');
+
 /**
  * This function load all styles and scripts
+ * 
+ * @return void
  */
 function neogym_assets()
 {
@@ -21,7 +30,9 @@ function neogym_assets()
 add_action('wp_enqueue_scripts', 'neogym_assets');
 
 /**
- * This function register menus for us
+ * This function register nav menus for us
+ * 
+ * @return void
  */
 function neogym_register_menu()
 {
@@ -38,6 +49,8 @@ add_action('after_setup_theme', 'neogym_register_menu');
 
 /**
  * This function register sidebars
+ * 
+ * @return void
  */
 function neogym_register_sidebar()
 {
@@ -128,7 +141,7 @@ function add_menu_list_item_class($classes, $item, $args) {
        $classes[] = $args->list_item_class;
 
        if (in_array('current-menu-item', $item->classes)) {
-        $classes[] = 'active'; // Add the "active" class
+        $classes[] = 'active'; // Add the "active" class if menus element is active
     }
    }
    return $classes;
