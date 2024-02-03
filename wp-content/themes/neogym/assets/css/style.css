@@ -742,7 +742,7 @@ li[id="menu-item-162"] > a {
   border-bottom: 3px solid #ff2953; 
 } */
 
-#healthy-row, hr {
+.row.healthy-row, hr {
   width: 70%;
   margin: auto;
 }
