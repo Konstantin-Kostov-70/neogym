@@ -87,33 +87,67 @@ function neogym_register_sidebar()
 
 add_action('widgets_init', 'neogym_register_sidebar');
 
+
+/**
+ * This Class create custom WP_Query and list part of html code set in 'partials' directory
+ */
+
+class CustomPostTypeLister {
+
+  private $post_type;
+
+  public function __construct($post_type) {
+      $this->post_type = $post_type;
+  }
+
+  public function list_posts($post_per_page) {
+      $query_args = array(
+          'post_type'      => $this->post_type,
+          'post_status'    => 'publish',
+          'posts_per_page' => $post_per_page,
+          'paged'          => get_query_var('paged'),
+      );
+
+      $custom_query = new WP_Query($query_args);
+
+      if ($custom_query->have_posts()) :
+          while ($custom_query->have_posts()) : $custom_query->the_post();
+              get_template_part('partials/content', $this->post_type);
+          endwhile;
+      endif;
+
+      $GLOBALS['wp_query'] = $custom_query;
+  }
+}
+
+
 /**
  * This function list all posts in blog page
  * 
  * @return void
- */
 
-function list_all_posts($post_per_page)
-{
-  $post_query_args = array(
-    'post_type'      => 'post',
-    'post_status'    => 'publish',
-    'posts_per_page' => $post_per_page,
-    'paged'          => get_query_var('paged'),
-
-  );
-
-  $post_query = new WP_Query($post_query_args);
-
-?>
-  <?php if ($post_query->have_posts()) : ?>
-    <?php while ($post_query->have_posts()) : $post_query->the_post(); ?>
-       <?php get_template_part('partials/content', 'post') ?>
-    <?php endwhile; ?>
-  <?php endif; ?>
-  <?php $GLOBALS['wp_query'] = $post_query; ?>
-<?php
-}
+ *function list_all_posts($post_per_page)
+ *{
+ *  $post_query_args = array(
+ *    'post_type'      => 'post',
+ *    'post_status'    => 'publish',
+ *    'posts_per_page' => $post_per_page,
+ *    'paged'          => get_query_var('paged'),
+ *
+ *  );
+ *
+ *  $post_query = new WP_Query($post_query_args);
+ *
+ *?>
+ *  <?php if ($post_query->have_posts()) : ?>
+ *    <?php while ($post_query->have_posts()) : $post_query->the_post(); ?>
+ *       <?php get_template_part('partials/content', 'post') ?>
+ *    <?php endwhile; ?>
+ *  <?php endif; ?>
+ *  <?php $GLOBALS*['wp_query'] = $post_query; ?>
+ *<?php
+ *}
+*/
 
 /**
  * This is filter function , what convert post title to uppercase
