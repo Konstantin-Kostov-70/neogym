@@ -165,13 +165,14 @@
 
     <div class="us_container ">
       <div class="row">
-      <?php if( function_exists( 'list_all_products' ) ) : ?>
+      <?php if( class_exists( 'CustomPostTypeLister' ) ) : ?>
         <?php
           $products_homepage_post_per_page = get_option( 'products_homepage_post_per_page' );
           if ( empty ( $products_homepage_post_per_page ) ) {
             $products_homepage_post_per_page = 2;
           }
-           list_all_products($products_homepage_post_per_page);
+          $product_lister = new CustomPostTypeLister( 'product' );
+          $product_lister->list_posts($products_homepage_post_per_page);
         ?>
       <?php endif; ?>
       </div>
@@ -188,8 +189,11 @@
     <div class="heading_container program-heading">
       <h2>BUILDING PROGRAMS</h2>
     </div>
-    <?php if( function_exists( 'list_all_trainers' ) ) : ?>
-      <?php list_all_programs(2); ?>
+    <?php if( class_exists( 'CustomPostTypeLister' ) ) : ?>
+      <?php
+        $program_lister = new CustomPostTypeLister( 'program' );
+        $program_lister->list_posts(2);
+      ?>
     <?php endif; ?>
   </div>
 </section>
@@ -208,13 +212,15 @@
       </h2>
     </div>
     <div class="row">
-      <?php if( function_exists( 'list_all_trainers' ) ) : ?>
-        <?php list_all_trainers(3); ?>
+      <?php if( class_exists( 'CustomPostTypeLister' ) ) : ?>
+        <?php
+          $trainer_lister = new CustomPostTypeLister( 'trainer' );
+          $trainer_lister->list_posts(3);
+        ?>
       <?php endif; ?>
     </div>
   </div>
 </section>
 
 <!-- end trainer section -->
-
 <?php get_footer(); ?>
