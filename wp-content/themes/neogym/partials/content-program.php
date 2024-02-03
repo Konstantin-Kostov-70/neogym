@@ -1,4 +1,4 @@
- <div id="healthy-row" class="row">
+ <div class="row healthy-row">
      <div class="col-md-12 mx-auto">
          <div class="detail-box">
              <h2>
