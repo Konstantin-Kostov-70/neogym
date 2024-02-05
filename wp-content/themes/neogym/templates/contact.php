@@ -13,12 +13,13 @@
         </div>
         <div class="col-lg-5 col-md-6">
           <div class="form_container pr-0 pr-lg-5 mr-0 mr-lg-2">
-            <div class="heading_container">
+            <div class="heading_container contact">
               <h2>
                 Contact Us
               </h2>
             </div>
-            <form action="">
+            <?php echo do_shortcode('[wpforms id="280"]');?>
+            <!-- <form action="">
               <div>
                 <input type="text" placeholder="Name" />
               </div>
@@ -36,7 +37,7 @@
                   Send
                 </button>
               </div>
-            </form>
+            </form> -->
           </div>
         </div>
       </div>
