@@ -11,7 +11,7 @@
                     <?php the_post_thumbnail('post-thumbnail'); ?>
                 </a>
             </div>
-            <div class="social_box">
+            <div id="home-page-social" class="social_box">
               <a href="">
                 <img src="<?php echo get_theme_file_uri('/assets/images/facebook-logo.png') ?>" alt="">
               </a>
