@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<?php if (have_posts()) : ?>
-    <?php while (have_posts()) :  the_post(); ?>
+<?php if ( have_posts() ) : ?>
+    <?php while ( have_posts() ) :  the_post(); ?>
      <section class="heathy_section layout_padding">
     <div class="container">
 

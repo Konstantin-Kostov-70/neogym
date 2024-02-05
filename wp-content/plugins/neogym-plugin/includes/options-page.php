@@ -5,11 +5,11 @@
         $products_homepage_post_per_page = 3;
     }
 
-    if ( ! empty( $_POST['products_save'] ) && $_POST['products_save'] == 1 ) {
+    if ( ! empty( $_POST[ 'products_save' ] ) && $_POST[ 'products_save' ] == 1 ) {
 
-        if ( ! empty( $_POST['products_homepage_post_number'] ) ) {
+        if ( ! empty( $_POST[ 'products_homepage_post_number' ] ) ) {
 
-            $products_post_per_page = esc_attr( $_POST['products_homepage_post_number'] );
+            $products_post_per_page = esc_attr( $_POST[ 'products_homepage_post_number' ] );
 
             update_option( 'products_homepage_post_per_page', $products_post_per_page, true );
         }

@@ -26,8 +26,8 @@ function custom_emoji( $atts, $emoji = null )
         'medal' => '&#127941'
     );
 
-    if ( !empty( $emoji_atts['id'] && array_key_exists( $emoji_atts['id'], $emoji_values ) ) ) {
-        $emoji = $emoji_values[ $emoji_atts['id'] ];
+    if ( !empty( $emoji_atts['id'] && array_key_exists( $emoji_atts[ 'id' ], $emoji_values ) ) ) {
+        $emoji = $emoji_values[ $emoji_atts[ 'id' ] ];
     }
 
     return '<span class="caption">' . $emoji . '</span>';
@@ -67,7 +67,7 @@ function program_joined()
         update_post_meta( $post_id, 'joined_users', $joined_users );
         wp_send_json( $joined_number + 1 );
     } else {
-        wp_send_json($joined_number);
+        wp_send_json( $joined_number );
     }
 }
 

@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 <!-- heathy section -->
-<?php if (have_posts()) : ?>
-  <?php while (have_posts()) : the_post(); ?>
+<?php if ( have_posts() ) : ?>
+  <?php while ( have_posts() ) : the_post(); ?>
     <section class="heathy_section layout_padding">
       <div class="container">
 
@@ -22,7 +22,7 @@
                 </a>
                 <div class="joined-wrapper">
                   <span>JOINED PEOPLE</span>
-                  <span class="joined-span"><?php echo get_post_meta(get_the_ID(), 'joined', true) ?></span>
+                  <span class="joined-span"><?php echo get_post_meta( get_the_ID(), 'joined', true) ?></span>
                 </div>
               </div>
             </div>

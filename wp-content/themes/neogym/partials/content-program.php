@@ -5,7 +5,7 @@
                  <?php the_title(); ?>
              </h2>
              <p>
-                 <?php echo wp_trim_words(get_the_content(), 30); ?>
+                 <?php echo wp_trim_words( get_the_content(), 30 ); ?>
              </p>
              <div class="btn-box">
                  <a href="<?php echo get_permalink(); ?>">

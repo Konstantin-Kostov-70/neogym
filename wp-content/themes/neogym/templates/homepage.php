@@ -15,13 +15,13 @@
               'posts_per_page' => 5,
             );
 
-            $query = new WP_Query($args);
+            $query = new WP_Query( $args );
             $counter = 0;
 
-            while ($query->have_posts()) : $query->the_post();
-              $active_class = ($counter === 0) ? 'active' : '';
+            while ( $query->have_posts() ) : $query->the_post();
+              $active_class = ( $counter === 0 ) ? 'active' : '';
             ?>
-              <div class="carousel-item <?php echo esc_attr($active_class); ?>">
+              <div class="carousel-item <?php echo esc_attr( $active_class ); ?>">
                 <div class="container">
                   <div class="col-lg-10 col-md-11 mx-auto">
                     <div class="detail-box">
@@ -31,7 +31,7 @@
                         <div>
                           <div class="carousel-img img-box">
                             <!-- <a href="<?php the_permalink(); ?>"> -->
-                            <?php the_post_thumbnail('post-thumbnail'); ?>
+                            <?php the_post_thumbnail( 'post-thumbnail' ); ?>
                             <!-- </a> -->
                           </div>
                           <a href="<?php the_permalink(); ?>">Contact Us</a>
@@ -50,8 +50,8 @@
             ?>
           </div>
           <ol class="carousel-indicators">
-            <?php for ($i = 0; $i < $counter; $i++) : ?>
-              <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo esc_attr($i); ?>" class="<?php echo ($i === 0) ? 'active' : ''; ?>"></li>
+            <?php for ( $i = 0; $i < $counter; $i++ ) : ?>
+              <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo esc_attr( $i ); ?>" class="<?php echo ( $i === 0 ) ? 'active' : ''; ?>"></li>
             <?php endfor; ?>
           </ol>
         </div>
@@ -205,7 +205,6 @@
       <!-- end slider section -->
     </div>
 
-
     <!-- Us section -->
 
     <section class="us_section layout_padding">
@@ -218,14 +217,14 @@
 
         <div class="us_container ">
           <div class="row">
-            <?php if (class_exists('CustomPostTypeLister')) : ?>
+            <?php if ( class_exists( 'CustomPostTypeLister' ) ) : ?>
               <?php
-              $products_homepage_post_per_page = get_option('products_homepage_post_per_page');
-              if (empty($products_homepage_post_per_page)) {
+              $products_homepage_post_per_page = get_option( 'products_homepage_post_per_page' );
+              if ( empty( $products_homepage_post_per_page ) ) {
                 $products_homepage_post_per_page = 2;
               }
-              $product_lister = new CustomPostTypeLister('product');
-              $product_lister->list_posts($products_homepage_post_per_page);
+              $product_lister = new CustomPostTypeLister( 'product' );
+              $product_lister->list_posts( $products_homepage_post_per_page );
               ?>
             <?php endif; ?>
           </div>
@@ -242,9 +241,9 @@
         <div class="heading_container program-heading">
           <h2>BUILDING PROGRAMS</h2>
         </div>
-        <?php if (class_exists('CustomPostTypeLister')) : ?>
+        <?php if ( class_exists( 'CustomPostTypeLister' ) ) : ?>
           <?php
-          $program_lister = new CustomPostTypeLister('program');
+          $program_lister = new CustomPostTypeLister( 'program' );
           $program_lister->list_posts(2);
           ?>
         <?php endif; ?>
@@ -259,15 +258,15 @@
       <div class="container">
         <div class="heading_container">
           <h2>
-            <a id="trainer-heading" href="<?php echo site_url('/our-trainers') ?>">
+            <a id="trainer-heading" href="<?php echo site_url( '/our-trainers' ) ?>">
               Our Gym Trainers
             </a>
           </h2>
         </div>
         <div class="row">
-          <?php if (class_exists('CustomPostTypeLister')) : ?>
+          <?php if ( class_exists( 'CustomPostTypeLister' ) ) : ?>
             <?php
-            $trainer_lister = new CustomPostTypeLister('trainer');
+            $trainer_lister = new CustomPostTypeLister( 'trainer' );
             $trainer_lister->list_posts(3);
             ?>
           <?php endif; ?>
@@ -275,6 +274,7 @@
       </div>
     </section>
 
-    <?php wp_reset_postdata(); ?>
     <!-- end trainer section -->
+
+    <?php wp_reset_postdata(); ?>
     <?php get_footer(); ?>

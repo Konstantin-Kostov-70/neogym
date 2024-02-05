@@ -2,7 +2,7 @@
     <div class="box">
         <div class="img-box">
             <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail('post-thumbnail'); ?>
+                <?php the_post_thumbnail( 'post-thumbnail' ); ?>
             </a>
         </div>
         <div class="detail-box">

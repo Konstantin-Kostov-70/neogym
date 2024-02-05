@@ -10,24 +10,24 @@
 add_theme_support('post-thumbnails');
 
 /**
- * This function load all styles and scripts
+ * This function load all styles and scripts dynamic
  * 
  * @return void
  */
 function neogym_assets()
 {
-  wp_enqueue_style('style-css', get_theme_file_uri('/assets/css/style.css'), false, '1.0.0');
-  wp_enqueue_style('responsive-css', get_theme_file_uri('/assets/css/responsive.css'), false, '1.0.0');
-  wp_enqueue_style('bootstrap-css', get_theme_file_uri('/assets/css/bootstrap.css'), false, '1.0.0');
-  wp_enqueue_style('owl-carousel', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', false, '1.0.0');
-  wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap', false, '1.0.0');
+  wp_enqueue_style( 'style-css', get_theme_file_uri( '/assets/css/style.css' ), false, '1.0.0' );
+  wp_enqueue_style( 'responsive-css', get_theme_file_uri( '/assets/css/responsive.css' ), false, '1.0.0' );
+  wp_enqueue_style( 'bootstrap-css', get_theme_file_uri( '/assets/css/bootstrap.css' ), false, '1.0.0' );
+  wp_enqueue_style( 'owl-carousel', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', false, '1.0.0' );
+  wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap', false, '1.0.0' );
 
   // This scripts is loaded in footer.php with function wp_footer() , the last argument is set to true because we wont this functionality
-  wp_enqueue_script('bootstrap-js', get_theme_file_uri('/assets/js/bootstrap.js'), array(), '1.0.0', true);
-  wp_enqueue_script('bootstrap-js', get_theme_file_uri('/assets/js/jquery-3.4.1.min.js'), array('jquery'), '1.0.0', true);
+  wp_enqueue_script('bootstrap-js', get_theme_file_uri('/assets/js/bootstrap.js'), array(), '1.0.0', true );
+  wp_enqueue_script('bootstrap-js', get_theme_file_uri('/assets/js/jquery-3.4.1.min.js'), array('jquery'), '1.0.0', true );
 }
 
-add_action('wp_enqueue_scripts', 'neogym_assets');
+add_action( 'wp_enqueue_scripts', 'neogym_assets' );
 
 /**
  * This function register nav menus for us
@@ -44,7 +44,7 @@ function neogym_register_menu()
   ));
 }
 
-add_action('after_setup_theme', 'neogym_register_menu');
+add_action( 'after_setup_theme', 'neogym_register_menu' );
 
 
 /**
@@ -85,7 +85,7 @@ function neogym_register_sidebar()
   ));
 }
 
-add_action('widgets_init', 'neogym_register_sidebar');
+add_action( 'widgets_init', 'neogym_register_sidebar' );
 
 
 /**
@@ -96,11 +96,11 @@ class CustomPostTypeLister {
 
   private $post_type;
 
-  public function __construct($post_type) {
+  public function __construct( $post_type ) {
       $this->post_type = $post_type;
   }
 
-  public function list_posts($post_per_page) {
+  public function list_posts( $post_per_page ) {
       $query_args = array(
           'post_type'      => $this->post_type,
           'post_status'    => 'publish',
@@ -110,9 +110,9 @@ class CustomPostTypeLister {
 
       $custom_query = new WP_Query($query_args);
 
-      if ($custom_query->have_posts()) :
-          while ($custom_query->have_posts()) : $custom_query->the_post();
-              get_template_part('partials/content', $this->post_type);
+      if ( $custom_query->have_posts() ) :
+          while ( $custom_query->have_posts() ) : $custom_query->the_post();
+              get_template_part( 'partials/content', $this->post_type );
           endwhile;
       endif;
 
@@ -122,7 +122,8 @@ class CustomPostTypeLister {
 
 
 /**
- * This function list all posts in blog page
+ * This function list all posts in blog page, but
+ * we put it in a class in order to reuse it for different cpt types
  * 
  * @return void
 
@@ -162,7 +163,7 @@ function uppercase_post_title( $title )
   return $title;
 }
 
-add_filter('the_title', 'uppercase_post_title');
+add_filter( 'the_title', 'uppercase_post_title' );
 
 
 /**
@@ -170,17 +171,17 @@ add_filter('the_title', 'uppercase_post_title');
  * 
  * @return string
  */
-function add_menu_list_item_class($classes, $item, $args) {
-   if (property_exists($args, 'list_item_class')) {
+function add_menu_list_item_class( $classes, $item, $args ) {
+   if ( property_exists( $args, 'list_item_class' ) ) {
        $classes[] = $args->list_item_class;
 
-       if (in_array('current-menu-item', $item->classes)) {
+       if (in_array( 'current-menu-item', $item->classes ) ) {
         $classes[] = 'active'; // Add the "active" class if menus element is active
     }
    }
    return $classes;
  }
- add_filter('nav_menu_css_class', 'add_menu_list_item_class', 1, 3);
+ add_filter( 'nav_menu_css_class', 'add_menu_list_item_class', 1, 3 );
 
 
 /**

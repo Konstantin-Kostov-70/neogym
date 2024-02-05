@@ -3,8 +3,8 @@
 <!-- heathy section -->
 
 
-<?php if (have_posts()) : ?>
-  <?php while (have_posts()) : the_post() ?>
+<?php if ( have_posts() ) : ?>
+  <?php while ( have_posts() ) : the_post() ?>
 
     <section class="heathy_section layout_padding">
       <div class="container">
@@ -16,7 +16,7 @@
                 <?php the_title(); ?>
               </h1>
               <div class="carousel-img single-image gym-item">
-                <?php the_post_thumbnail('post-thumbnail'); ?>
+                <?php the_post_thumbnail( 'post-thumbnail' ); ?>
               </div>
               <h2>
                 <?php

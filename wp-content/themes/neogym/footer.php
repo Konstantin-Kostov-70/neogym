@@ -12,11 +12,10 @@
              Location
            </p>
            <?php
-           dynamic_sidebar('footer-1')
+           dynamic_sidebar( 'footer-1' )
             ?>
          </div>
        </div>
-
 
        <div class="item ">
          <div class="img-box box-2">
@@ -27,11 +26,10 @@
              +02 1234567890
            </p>
            <?php
-           dynamic_sidebar('footer-2')
+           dynamic_sidebar( 'footer-2' )
             ?>
          </div>
        </div>
-
 
        <div class="item ">
          <div class="img-box box-3">
@@ -42,7 +40,7 @@
              demo@gmail.com
            </p>
            <?php
-           dynamic_sidebar('footer-3')
+           dynamic_sidebar( 'footer-3' )
             ?>
          </div>
        </div>
