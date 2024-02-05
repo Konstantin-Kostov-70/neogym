@@ -27,15 +27,4 @@
   <?php endwhile; ?>
 <?php endif; ?>
 
-<!-- end heathy section -->
-
-
-
-<!-- contact section -->
-
-
-<!-- end contact section -->
-
-
-
 <?php get_footer(); ?>
