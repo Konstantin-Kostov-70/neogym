@@ -15,7 +15,10 @@
             <p id="read-more">
                 <?php echo wp_trim_words( get_the_content(), 6 ) ?>
                 <span class="author"> Posted by <?php the_author_posts_link(); ?></span>
-                <span class="author"> on <?php the_time( 'n/M/Y' ) ?></span>
+                <span class="author">
+                     on <a href="<?php echo esc_url( site_url( get_the_time( 'Y/m/' ) ) ); ?>">
+                        <?php the_time( 'Y/m/N' ) ?>
+                    </a></span>
                 <a href="<?php the_permalink(); ?>" class="read-more-a">Read more &raquo;</a>
             </p>
         </div>
