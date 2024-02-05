@@ -840,9 +840,10 @@ h3 {
 }
 
 .error-heading {
-  background: linear-gradient(90deg, #FF2953 26%, #E692BB 78%, #FBFDFD 96%);
+  color: #FF2953;
+  /* background: linear-gradient(90deg, #FF2953 26%, #E692BB 78%, #FBFDFD 96%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
   font-size: 90px;
   transform-origin: 50% 50%;
   animation: twist 5s infinite linear;
@@ -850,9 +851,10 @@ h3 {
 
 .error-text {
   font-size: 30px;
-  background: linear-gradient(90deg, #FF2953 26%, #E692BB 78%, #FBFDFD 96%);
+  color: #FF2953;
+  /* background: linear-gradient(90deg, #FF2953 89%, #E692BB 47%, #FBFDFD 96%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
 }
 
 
