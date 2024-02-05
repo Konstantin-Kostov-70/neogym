@@ -3,42 +3,23 @@
 
 
 <section class="trainer_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-            Our Gym Trainers
-        </h2>
-      </div>
-      <div class="row">
-        <?php list_all_trainers(9); ?>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- heathy section -->
-
-  <section class="heathy_section layout_padding">
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-12 mx-auto">
-          <div class="detail-box">
-            <h2>
-              HEALTHY MIND, HEALTHY BODY
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-            </p>
-            <div class="btn-box">
-              <a href="">
-                READ MORE
-              </a>
-            </div>
-          </div>
+      <div class="container">
+        <div class="heading_container">
+          <h2>
+            <a id="trainer-heading" href="<?php echo site_url('/our-trainers') ?>">
+              Our Gym Trainers
+            </a>
+          </h2>
+        </div>
+        <div class="row">
+          <?php if (class_exists('CustomPostTypeLister')) : ?>
+            <?php
+            $trainer_lister = new CustomPostTypeLister('trainer');
+            $trainer_lister->list_posts(3);
+            ?>
+          <?php endif; ?>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
 <?php get_footer(); ?>
