@@ -22,6 +22,7 @@
 require NEOGYM_INCLUDE . '/cpt-trainers.php';
 require NEOGYM_INCLUDE . '/cpt-program.php';
 require NEOGYM_INCLUDE . '/cpt-products.php';
+require NEOGYM_INCLUDE . '/cpt-gyms.php';
 require NEOGYM_INCLUDE . '/function.php';
 
 function program_joined_enqueue() {
