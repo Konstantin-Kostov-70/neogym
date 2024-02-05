@@ -5,7 +5,7 @@
      <section class="heathy_section layout_padding">
     <div class="container">
 
-      <div class="row">
+      <div class="row healthy-row">
         <div class="col-md-12 mx-auto">
           <div class="detail-box">
             <h2>
