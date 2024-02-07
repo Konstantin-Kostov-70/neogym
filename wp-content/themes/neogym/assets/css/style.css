@@ -812,7 +812,8 @@ a:focus {
 .carousel-img {
   width: 540px;
   margin: auto;
-  border: solid 2px gray;
+  border: solid 2px #FF2953;
+  box-shadow: red 4px 4px 20px;
   border-radius: 15px;
   overflow: hidden;
 }
@@ -853,7 +854,8 @@ h3 {
 }
 
 .footer-info {
-  border-top: 1px solid #ff2953;
+  /* border-top: 2px solid #ff2953; */
+  box-shadow: #ff2953 0  0 10px 0;
 }
 
 #car-head.carousel-heading  > h1 {
