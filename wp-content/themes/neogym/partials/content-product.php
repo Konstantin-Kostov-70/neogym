@@ -5,7 +5,7 @@
                 <?php the_post_thumbnail( 'post-thumbnail' ); ?>
             </a>
         </div>
-        <div class="detail-box">
+        <div id="detail-product" class="detail-box product">
             <h5>
                 <?php the_title(); ?>
             </h5>
