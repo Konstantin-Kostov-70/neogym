@@ -667,7 +667,7 @@ a:focus {
 
 }
 
-.detail-box h2 {
+.detail-box > h2 {
   color: #ff2953;
   text-align: center;
 }
@@ -786,15 +786,10 @@ a:focus {
 
 .detail-box {
   width: 100%;
-  font-weight: 100;
-}
-
-.detail-box a {
   font-weight: 400;
 }
 
-.detail-box h1,
-p {
+.detail-box > h1 {
   text-align: center;
 }
 
@@ -855,6 +850,16 @@ h3 {
   /* background: linear-gradient(90deg, #FF2953 89%, #E692BB 47%, #FBFDFD 96%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
+}
+
+.footer-info {
+  border-top: 1px solid #ff2953;
+}
+
+#car-head.carousel-heading  > h1 {
+  position: relative;
+  top: 20px;
+  color: #FF2953;
 }
 
 
