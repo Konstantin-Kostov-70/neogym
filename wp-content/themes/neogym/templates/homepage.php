@@ -28,7 +28,7 @@
                       <div id="car-head" class="carousel-heading">
                         <h1><?php the_title(); ?></h1>
                         <p><?php the_content(); ?></p>
-                        <div>
+                        <div class="img-wrapper">
                           <div class="carousel-img img-box">
                             <!-- <a href="<?php the_permalink(); ?>"> -->
                             <?php the_post_thumbnail( 'post-thumbnail' ); ?>
