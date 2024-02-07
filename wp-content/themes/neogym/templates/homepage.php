@@ -25,7 +25,7 @@
                 <div class="container">
                   <div class="col-lg-10 col-md-11 mx-auto">
                     <div class="detail-box">
-                      <div>
+                      <div id="car-head" class="carousel-heading">
                         <h1><?php the_title(); ?></h1>
                         <p><?php the_content(); ?></p>
                         <div>
