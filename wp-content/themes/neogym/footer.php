@@ -1,5 +1,5 @@
  <!-- info section -->
- <section class="info_section layout_padding2">
+ <section class="info_section layout_padding2 footer-info">
    <div class="container">
      <div class="info_items">
 
