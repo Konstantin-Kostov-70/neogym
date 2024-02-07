@@ -57,6 +57,62 @@
     .slider_section .detail-box h1 {
         letter-spacing: .3rem;
     }
+
+    .row.healthy-row {
+        width: 95%;
+    }
+
+    .col-md-12 .mx {
+        padding: 0;
+    }
+
+    .joined-wrapper {
+        width: 84%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 18px;
+    }
+    .btn-box {
+        flex-direction: column;
+        height: 175px;
+        margin: 0;
+        justify-content: space-between;
+    }
+
+    .joined-span {
+        width: 40px;
+    }
+
+    .info_items .item {
+        width: 323px;
+    }
+
+    .item > .detail-box > p {
+        text-align: center;
+    }
+
+    .us_container > .col-lg-3.col-md-6 > .row >.box > .detail-box {
+        width: 70%;
+    }
+
+    .carousel-img {
+        width: 332px;
+    }
+
+    #car-head.carousel-heading  > h1{   
+        font-size: x-large ;
+    }
+    #car-head.carousel-heading  > h2{   
+        font-size: larger ;
+    }
+    #car-head.carousel-heading  > h3{   
+        font-size: large ;
+    }
+
+    .detail-box.product {
+        width: 70%;
+      } 
 }
 
 @media (max-width: 360px) {}
