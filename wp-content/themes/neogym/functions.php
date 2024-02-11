@@ -195,5 +195,3 @@ function add_menu_list_item_class( $classes, $item, $args ) {
     return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'add_class_to_all_menu_anchors', 10 );
-
-
