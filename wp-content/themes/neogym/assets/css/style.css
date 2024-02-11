@@ -93,6 +93,7 @@ body {
 .header_section .container-fluid {
   padding-right: 25px;
   padding-left: 25px;
+  background-color: #000000;
 }
 
 .header_section .nav_container {
@@ -862,6 +863,14 @@ h3 {
   position: relative;
   top: 20px;
   color: #FF2953;
+}
+
+.trainer-cat {
+  color: goldenrod;
+}
+
+.single-content {
+  text-align: center;
 }
 
 
