@@ -128,3 +128,4 @@ function trainer_meta_save ( $post_id ) {
 	update_post_meta( $post_id, 'best_trainer', $bestTrainer );
 }
 add_action( 'save_post', 'trainer_meta_save' );
+
