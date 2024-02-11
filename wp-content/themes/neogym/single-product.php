@@ -14,7 +14,7 @@
               <div class="single-image">
                 <?php the_post_thumbnail( 'post-thumbnail' ); ?>
               </div>
-              <p>
+              <p class="single-content">
               <?php echo wp_trim_words(get_the_content(), 10); ?>
               </p>
             </div>
