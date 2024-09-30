@@ -1,4 +1,8 @@
-## This  Neogim project is Wordpress website whose purpose is to present various functionalities learned in the course "Wordpress for developers" in SoftUni. 
+## The Neogim Project
+
+#### The Neogim project is a WordPress website developed to demonstrate various functionalities acquired during the "WordPress for Developers" course at SoftUni. It is specifically designed for gym training centers, effectively showcasing fitness programs, nutrition plans, and personal trainers.
+
+
 ## 1. Create Custom Theme
      1.1 Use native WP_Query() for looping (The_Loop()) different items in the corresponding templates.
      1.2 Header part, including the dynamic <title> field, providing the option to enqueue scripts and     styles and dynamically populate the HTML attributes.
